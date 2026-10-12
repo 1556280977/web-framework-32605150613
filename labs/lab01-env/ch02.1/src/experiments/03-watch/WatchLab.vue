@@ -25,7 +25,7 @@
 
     <h3>👂 deep / 路径侦听对比</h3>
     <p>user.name = {{ user.name }}｜user.city = {{ user.city }}</p>
-    <button @click="user.name = ['张三', '李四', '王五'][Math.floor(Math.random() * 3)]">改 user.name（两种侦听都响）</button>
+    <button @click="user.name = ['王林', '石昊', '唐三'][Math.floor(Math.random() * 3)]">改 user.name（两种侦听都响）</button>
     <button @click="user.city = ['成都', '绵阳', '乐山'][Math.floor(Math.random() * 3)]">改 user.city（只有 deep 响）</button>
   </div>
 </template>
