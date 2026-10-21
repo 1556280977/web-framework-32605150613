@@ -1,0 +1,25 @@
+{
+  "name": "web-framework-32605150613",
+  "version": "1.0.0",
+  "description": "- 学号：32605150613\r - 姓名：左博文\r - Node.js 版本：v24.21.0\r - NPM 版本：11.19.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/1556280977/web-framework-32605150613.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/1556280977/web-framework-32605150613/issues"
+  },
+  "homepage": "https://github.com/1556280977/web-framework-32605150613#readme",
+  "dependencies": {
+    "vite": "^8.3.4",
+    "vue": "^3.5.44"
+  }
+}
