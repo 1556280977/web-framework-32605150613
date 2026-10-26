@@ -40,6 +40,6 @@ export default {
   padding: 10px 16px;
   margin-top: 10px;
   background: var(--primary-bg);
-  background: #3131ac;
+  background: #3a3a7b;
 }
 </style>
