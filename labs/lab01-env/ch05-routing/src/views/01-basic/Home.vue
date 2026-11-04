@@ -19,22 +19,54 @@ export default {
 
 <style scoped>
 .page {
-  background: var(--card, #fff);
-  border: 1px solid var(--border);
-  border-left: 4px solid var(--primary);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 14px 18px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e8e8f4;
+  border-radius: 18px;
+  padding: clamp(22px, 4vw, 34px);
+  background:
+    radial-gradient(circle at 95% 8%, rgb(234 231 255 / 72%), transparent 15rem),
+    linear-gradient(130deg, #fff, #fcfbff);
+  box-shadow: 0 14px 32px rgb(48 50 100 / 6%);
+}
+
+.page::after {
+  position: absolute;
+  right: -40px;
+  bottom: -105px;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgb(117 100 216 / 11%);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+h2 {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
 }
 
 code {
-  background: var(--primary-bg);
-  border-radius: 4px;
-  padding: 0 6px;
+  border-color: #e8e7fb;
+  border-radius: 6px;
+  padding: 2px 7px;
+  color: #5966c4;
+  background: #f4f3ff;
   font-family: Consolas, Monaco, monospace;
 }
 
 .muted {
   color: var(--muted);
+  font-size: 14px;
+}
+
+.page p {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  line-height: 1.85;
 }
 </style>

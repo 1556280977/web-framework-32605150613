@@ -73,95 +73,137 @@ export default {
   width: min(100% - 40px, 1080px);
   min-height: 100vh;
   margin: 0 auto;
-  padding: clamp(28px, 6vw, 68px) 0 24px;
+  padding: clamp(24px, 5vw, 56px) 0 28px;
 }
 
 .app-header {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  margin-bottom: 30px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 24px;
+  padding: clamp(25px, 4vw, 38px) clamp(24px, 5vw, 46px);
+  background:
+    radial-gradient(circle at 88% 12%, rgb(255 255 255 / 80%), transparent 13rem),
+    linear-gradient(115deg, #fff 0%, #f5f6ff 56%, #eeefff 100%);
+  box-shadow: 0 16px 42px rgb(45 63 128 / 8%);
+}
+
+.app-header::after {
+  position: absolute;
+  right: 105px;
+  bottom: -125px;
+  width: 250px;
+  height: 250px;
+  border: 1px solid rgb(82 105 232 / 10%);
+  border-radius: 50%;
+  content: '';
+  pointer-events: none;
+}
+
+.app-header > div:first-child {
+  position: relative;
+  z-index: 1;
 }
 
 .eyebrow {
-  margin-bottom: 8px;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 13px;
+  border: 1px solid #e6e9ff;
+  border-radius: 999px;
+  padding: 5px 10px;
   color: var(--primary-dark);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.14em;
+  background: rgb(255 255 255 / 75%);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.12em;
 }
 
 .eyebrow span {
-  padding: 0 4px;
+  padding: 0 6px;
   color: #a7b1c5;
 }
 
 h1 {
   margin: 0;
   color: var(--text-h);
-  font-size: clamp(1.85rem, 5vw, 2.75rem);
-  font-weight: 750;
+  font-size: clamp(1.85rem, 5vw, 2.65rem);
+  font-weight: 760;
   letter-spacing: -0.045em;
   line-height: 1.12;
 }
 
 .intro {
-  margin: 10px 0 0;
+  margin: 12px 0 0;
   color: var(--muted);
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .chapter-mark {
+  position: relative;
+  z-index: 1;
   display: grid;
-  flex: 0 0 82px;
-  width: 82px;
-  height: 82px;
+  flex: 0 0 88px;
+  width: 88px;
+  height: 88px;
   align-content: center;
   justify-items: center;
-  border: 1px solid #dce3ff;
-  border-radius: 24px;
-  color: var(--primary-dark);
-  background: linear-gradient(145deg, #fff, #edf0ff);
-  box-shadow: 0 10px 25px rgb(82 105 232 / 12%);
-  transform: rotate(3deg);
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 26px;
+  color: #fff;
+  background: linear-gradient(145deg, #7186f1, #5269e8 70%, #465bd2);
+  box-shadow: 0 12px 26px rgb(82 105 232 / 24%);
+  transform: rotate(4deg);
 }
 
 .chapter-mark span {
-  font-size: 10px;
+  color: rgb(255 255 255 / 78%);
+  font-size: 9px;
   font-weight: 800;
   letter-spacing: 0.14em;
 }
 
 .chapter-mark strong {
-  font-size: 30px;
+  font-size: 32px;
   line-height: 1;
 }
 
 .top-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 18px;
+  gap: 7px;
+  margin-bottom: 14px;
 }
 
 .top-nav a {
-  border: 1px solid var(--border);
+  border: 1px solid rgb(226 232 242 / 85%);
   border-radius: 999px;
-  padding: 7px 14px;
+  padding: 8px 14px;
   color: #536177;
-  background: rgb(255 255 255 / 75%);
-  font-size: 14px;
+  background: rgb(255 255 255 / 80%);
+  box-shadow: 0 2px 7px rgb(36 55 95 / 3%);
+  font-size: 12px;
   font-weight: 600;
   text-decoration: none;
-  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  transition:
+    color 160ms ease,
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .top-nav a:hover {
   border-color: #c8d0ff;
   color: var(--primary-dark);
   background: #fff;
-  transform: translateY(-1px);
+  box-shadow: 0 5px 13px rgb(36 55 95 / 8%);
+  transform: translateY(-2px);
 }
 
 /* router-link 匹配当前地址时自动带上 router-link-active 类——白送的高亮 */
@@ -179,11 +221,12 @@ h1 {
   justify-content: space-between;
   gap: 14px;
   min-height: 52px;
-  margin-bottom: 18px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 10px 16px;
-  background: rgb(255 255 255 / 72%);
+  margin-bottom: 16px;
+  border: 1px solid rgb(226 232 242 / 85%);
+  border-radius: 13px;
+  padding: 10px 15px;
+  background: rgb(255 255 255 / 82%);
+  box-shadow: 0 4px 14px rgb(36 55 95 / 3%);
 }
 
 .route-location,
@@ -234,38 +277,67 @@ h1 {
 
 .route-stage {
   min-height: 240px;
+  animation: stage-in 260ms ease both;
 }
 
 .app-footer {
   display: flex;
   justify-content: space-between;
   gap: 12px;
-  margin-top: 24px;
-  border-top: 1px solid var(--border);
-  padding-top: 15px;
+  margin-top: 22px;
+  border-top: 1px solid rgb(226 232 242 / 80%);
+  padding: 15px 2px 0;
   color: #8a96a9;
-  font-size: 12px;
+  font-size: 11px;
+}
+
+@keyframes stage-in {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 640px) {
   #app {
     width: min(100% - 28px, 1080px);
-    padding-top: 32px;
+    padding-top: 24px;
   }
 
   .app-header {
-    margin-bottom: 22px;
+    margin-bottom: 17px;
+    border-radius: 19px;
+    padding: 24px 21px;
   }
 
   .chapter-mark {
-    flex-basis: 62px;
-    width: 62px;
-    height: 62px;
-    border-radius: 18px;
+    flex-basis: 61px;
+    width: 61px;
+    height: 61px;
+    border-radius: 19px;
   }
 
   .chapter-mark strong {
-    font-size: 24px;
+    font-size: 23px;
+  }
+
+  .intro {
+    max-width: 300px;
+    font-size: 13px;
+  }
+
+  .top-nav {
+    gap: 6px;
+    margin-bottom: 12px;
+  }
+
+  .top-nav a {
+    padding: 7px 11px;
+    font-size: 11px;
   }
 
   .route-status {
@@ -283,6 +355,33 @@ h1 {
 
   .app-footer {
     flex-direction: column;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 400px) {
+  #app {
+    width: calc(100% - 24px);
+  }
+
+  .app-header {
+    gap: 12px;
+    padding: 21px 17px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .chapter-mark {
+    flex-basis: 54px;
+    width: 54px;
+    height: 54px;
+    border-radius: 17px;
+  }
+
+  .chapter-mark strong {
+    font-size: 21px;
   }
 }
 

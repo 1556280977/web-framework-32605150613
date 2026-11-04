@@ -1,25 +1,25 @@
 :root {
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #263247;
-  background: #f3f6fc;
+  color: #29344b;
+  background: #f6f7fc;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  --text: #263247;
-  --text-h: #17243a;
-  --muted: #718096;
-  --bg: #f3f6fc;
+  --text: #29344b;
+  --text-h: #1e2940;
+  --muted: #758199;
+  --bg: #f6f7fc;
   --card: #fff;
-  --border: #e2e8f2;
-  --primary: #5269e8;
-  --primary-dark: #4055ce;
-  --primary-bg: #eef1ff;
-  --accent: #8056d9;
-  --warn: #e8a23a;
-  --radius: 16px;
-  --shadow: 0 14px 36px rgb(36 55 95 / 8%);
+  --border: #e8eaf3;
+  --primary: #6878e8;
+  --primary-dark: #4d5ed0;
+  --primary-bg: #f0f1ff;
+  --accent: #8669d3;
+  --warn: #db9b48;
+  --radius: 18px;
+  --shadow: 0 16px 40px rgb(45 57 100 / 7%);
 
   font-size: 16px;
   line-height: 1.65;
@@ -34,7 +34,8 @@ body {
   min-height: 100vh;
   margin: 0;
   background:
-    radial-gradient(ellipse at 10% 0%, rgb(91 117 235 / 10%), transparent 34rem),
+    radial-gradient(ellipse at 7% 2%, rgb(139 151 237 / 13%), transparent 33rem),
+    radial-gradient(ellipse at 95% 22%, rgb(195 177 239 / 10%), transparent 31rem),
     var(--bg);
 }
 
@@ -59,7 +60,11 @@ button {
   color: var(--text-h);
   background: #fff;
   cursor: pointer;
-  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
+  transition:
+    border-color 160ms ease,
+    background 160ms ease,
+    transform 160ms ease,
+    box-shadow 160ms ease;
 }
 
 button:hover {
@@ -119,6 +124,52 @@ code {
   padding: clamp(18px, 3vw, 28px);
   background: var(--card);
   box-shadow: var(--shadow);
+}
+
+.sub-page {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: clamp(16px, 2.6vw, 22px);
+  background: linear-gradient(145deg, #fff, #fbfbff);
+  box-shadow: 0 8px 22px rgb(36 55 95 / 5%);
+}
+
+.page h2,
+.users h2,
+.user-card h2 {
+  letter-spacing: -0.025em;
+}
+
+.page p,
+.users p,
+.user-card p {
+  line-height: 1.8;
+}
+
+.page code,
+.users code,
+.user-card code {
+  border-color: #e8e8fa;
+  border-radius: 7px;
+  color: #5966c4;
+  background: #f5f5ff;
+}
+
+.page button,
+.users button,
+.user-card button {
+  border-color: #dfe3fa;
+  border-radius: 10px;
+  color: var(--primary-dark);
+  background: #f8f8ff;
+}
+
+.page button:hover,
+.users button:hover,
+.user-card button:hover {
+  border-color: #bcc5f6;
+  background: #eff1ff;
+  box-shadow: 0 5px 14px rgb(82 105 232 / 10%);
 }
 
 .page > :last-child,
